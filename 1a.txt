@@ -1,0 +1,80 @@
+ElectricityBill
+
+
+
+
+import java.util.Scanner;
+class Electricitybill{
+int consumernumber;
+string consumername;
+int prevreading;
+int currreading;
+string connectiontype;
+int units;
+double billamount;
+void getinput(){
+scanner sc=new Scanner(System.in);
+System.out.println("enter consumernumber:");
+consumernumber=sc.nextInt();
+System.out.println("enter consumername:");
+consumername=sc.nextLine();
+System.out.println("enter previous reading:");
+prevreading=sc.nextInt();
+System.out.println("enter current reading:");
+currreading=sc.nextInt();
+System.out.println("enter connectiontype (domestic/commercial):");
+connectiontype=sc.nextLine();
+}
+void calculatebill(){
+units=currreading-prevreading
+if(connectiontype.equalsIgnoreCase("domestic")){
+if(units<=100){
+billamount=units*1;
+}
+else if(units<=200){
+billamount=100*1+(units-100)*2.5;
+}
+else if(units<=500){
+billamount=100*1+100*2.5+(units-200)*4;
+}
+else{
+billamount=100*1+100*2.5+300*4+(units-500)*6;
+}
+}
+
+else if(connectiontype.equalsIgnoreCase("commercial")){
+if(units<=100){
+billamount=units*2;
+}
+else if(units<=200){
+billamount=100*2+(units-100)*4.5;
+}
+else if(units<=500){
+billamount=100*2+100*4.5+(units-200)*6;
+}
+else{
+billamount=100*2+100*4.5+300*6+(units-500)*7;
+}
+}
+
+else{
+system.out.println("Invalid connection type");
+}
+}
+void displaybill(){
+system.out.println("\n...Electricity bill...");
+system.out.println("consumer number:"+consumernumber);
+system.out.println("consumer name:"+consumername);
+system.out.println("consumer type:"+consumertype);
+system.out.println(" units consumed:"+units);
+system.out.println("Bill amount:Rs%.2f\n"+billamount);
+}
+}
+public class SimpleElectricitybill{
+public static void main(string[] args){
+ElectricityBill eb=new Electricitybill();
+eb.getinput();
+eb.calculatebill();
+eb.displaybill();
+}
+}
