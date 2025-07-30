@@ -1,8 +1,5 @@
 ElectricityBill
 
-
-
-
 import java.util.Scanner;
 class Electricitybill{
 int consumernumber;
