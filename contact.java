@@ -1,7 +1,3 @@
- SHIVA DHARANI P S
- 24UCS003
- CSE C
-
 import java.util.*;
 class contact
 {
